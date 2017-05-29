@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -18,9 +20,11 @@ namespace ConsoleApp1
             new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
         };
 
-        [HttpPost]
-        public IEnumerable<Product> GetAllProducts()
+        [HttpGet]
+        public IEnumerable<Product> Get()
         {
+            var op = Thread.CurrentPrincipal as ClaimsPrincipal;
+            products[2].Name = op?.Identity.Name;
             return products;
         }
 

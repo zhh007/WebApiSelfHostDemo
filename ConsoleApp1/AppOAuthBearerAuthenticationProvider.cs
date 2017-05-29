@@ -86,5 +86,10 @@ SELECT [Id]
 
             return entity;
         }
+
+        public override Task RequestToken(OAuthRequestTokenContext context)
+        {
+            return base.RequestToken(context);
+        }
     }
 }

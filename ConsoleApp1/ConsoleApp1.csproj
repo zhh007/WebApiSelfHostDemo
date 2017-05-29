@@ -66,6 +66,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -86,8 +88,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppAuthenticationTokenProvider.cs" />
     <Compile Include="ApplicationOAuthProvider.cs" />
     <Compile Include="AppOAuthBearerAuthenticationProvider.cs" />
+    <Compile Include="MachineKeyProtector.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductsController.cs" />
     <Compile Include="Program.cs" />
